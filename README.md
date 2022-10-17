@@ -5,10 +5,11 @@ This module is developed and designed for ROBLOX
 
 # Installation
 Place this module in a ModuleScript Instance in ServerScriptService in ROBLOX Studio
+
 ![image](https://user-images.githubusercontent.com/74668451/196124126-090de4c3-f1a9-415f-ad1c-6891881a2e35.png)
 
 # Usage
-You can reference the module using require, example:
+You can reference the module using require:
 ```lua
 local BasicEvents = require(game:GetService("ServerScriptService"):WaitForChild("BasicEvents", 5))
 ```
