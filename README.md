@@ -18,7 +18,16 @@ local BasicEvents = require(game:GetService("ServerScriptService"):WaitForChild(
 ```lua
 BasicEvents["PlayAnimation"].Execute(Player, Character, Animation)
 BasicEvents["StopAnimation"].Execute(Player, Character, Animation)
-local CharacterPosition = BasicEvents["GetCharacterPosition"].Execute(Character)
-local DistanceBetweenCharacters = BasicEvents["GetDistanceBetweenCharacters"].Execute(CharacterOne, CharacterTwo)
+local GetCharacterPosition = BasicEvents["GetCharacterPosition"].Execute(Character)
+local GetDistanceBetweenCharacters = BasicEvents["GetDistanceBetweenCharacters"].Execute(CharacterOne, CharacterTwo)
 BasicEvents["TeleportCharacter"].Execute(Character, Vector3)
+BasicEvents["WalkToCharacterPosition"].Execute(Character, TargetCharacter)
+BasicEvents["MakeCharacterChat"].Execute(Character, "Come here feller!")
+local CreateCurrencyForPlayer = BasicEvents["CreateCurrencyForPlayer"].Execute(Player, "Moolah", 400)
+BasicEvents["AddToCurrencyForPlayer"].Execute(Player, "Moolah", 200)
+local CreatePlayerTitle = BasicEvents["CreatePlayerTitle"].Execute(Player, "Gamer")
+BasicEvents["EditPlayerTitle"].Execute(Player, "Poggers")
 ```
+
+# Version
+1.0.3
