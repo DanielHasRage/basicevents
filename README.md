@@ -27,7 +27,8 @@ local CreateCurrencyForPlayer = BasicEvents["CreateCurrencyForPlayer"].Execute(P
 BasicEvents["AddToCurrencyForPlayer"].Execute(Player, "Moolah", 200)
 local CreatePlayerTitle = BasicEvents["CreatePlayerTitle"].Execute(Player, "Gamer")
 BasicEvents["EditPlayerTitle"].Execute(Player, "Poggers")
+local MakeInstance = BasicEvents["MakeInstance"].Execute(Player, InstanceType, Parent, Name)
 ```
 
 # Version
-1.0.3
+1.0.4
