@@ -36,7 +36,7 @@ local BasicEvents = {
 		end,
 		["Description"] = "An easy way to play animations with minimal code!"
 	},
-	
+
 	["StopAnimation"] = {
 		["Execute"] = function (Player, Character, AnimationInstance, ...)
 			if not Player or not Character or not AnimationInstance then
@@ -52,7 +52,7 @@ local BasicEvents = {
 		end,
 		["Description"] = "Use this to stop a specified animation from playing on a specific humanoid!"
 	},
-	
+
 	["GetCharacterPosition"] = {
 		["Execute"] = function (Character, ...)
 			local valueToReturn
@@ -65,7 +65,7 @@ local BasicEvents = {
 		end,
 		["Description"] = "Use this to get the current position of any passed Character!"
 	},
-	
+
 	["GetPartPosition"] = {
 		["Execute"] = function (Part, ...)
 			local valueToReturn
@@ -78,7 +78,7 @@ local BasicEvents = {
 		end,
 		["Description"] = "Use this to get a parts position, pretty pointless but here to be fancy!"
 	},
-	
+
 	["GetDistanceBetweenCharacters"] = {
 		["Execute"] = function (TargetCharacterOne, TargetCharacterTwo, ...)
 			local valueToReturn
@@ -91,7 +91,7 @@ local BasicEvents = {
 		end,
 		["Description"] = "Use this to get the distance in magnitude between two Characters!"
 	},
-	
+
 	["TeleportCharacter"] = {
 		["Execute"] = function (Character, Position, ...)
 			if not Character or not Position then
@@ -102,7 +102,7 @@ local BasicEvents = {
 		end,
 		["Description"] = "Use this to teleport a Character to a specified Vector3!"
 	},
-	
+
 	["WalkToCharacterPosition"] = {
 		["Execute"] = function (Character, TargetCharacter, ...)
 			if not Character or not TargetCharacter then
@@ -116,7 +116,7 @@ local BasicEvents = {
 		end,
 		["Description"] = "Use this to have one Character walk to another Character!"
 	},
-	
+
 	["MakeCharacterChat"] = {
 		["Execute"] = function (Character, Message, ...)
 			if not Character or not Message then
@@ -128,7 +128,7 @@ local BasicEvents = {
 		end,
 		["Description"] = "Use this to make a Character have a ChatBubble appear above their head with your custom message!"
 	},
-	
+
 	["CreateCurrencyForPlayer"] = {
 		["Execute"] = function (Player, CurrencyName, Amount, ...)
 			local valueToReturn
@@ -144,7 +144,7 @@ local BasicEvents = {
 		end,
 		["Description"] = "Create a leaderstat currency for a specified player with a specified amount, this will return the instance if it needs to be modified or stored!"
 	},
-	
+
 	["AddToCurrencyForPlayer"] = {
 		["Execute"] = function (Player, CurrencyName, Amount, ...)
 			if not Player or not CurrencyName or not Amount then
@@ -155,7 +155,7 @@ local BasicEvents = {
 		end,
 		["Description"] = "Add to an existing leaderstat in a specified player by indexing it's name, and add a certain amount!"
 	},
-	
+
 	["SubtractFromCurrencyForPlayer"] = {
 		["Execute"] = function (Player, CurrencyName, Amount, ...)
 			if not Player or not CurrencyName or not Amount then
@@ -166,7 +166,7 @@ local BasicEvents = {
 		end,
 		["Description"] = "Subtract from an existing leaderstat in a specified player by indexing it's name, and subtract a certain amount!"
 	},
-	
+
 	["CreatePlayerTitle"] = {
 		["Execute"] = function (Player, TitleName, ...)
 			local valueToReturn
@@ -182,7 +182,7 @@ local BasicEvents = {
 		end,
 		["Description"] = "Give a specific Player a Title in leaderstats, and return the Instance in case it needs to be modified or stored!"
 	},
-	
+
 	["EditPlayerTitle"] = {
 		["Execute"] = function (Player, TitleName, ...)
 			if not Player or not TitleName then
@@ -192,6 +192,18 @@ local BasicEvents = {
 			end
 		end,
 		["Description"] = "Change a players already existing Title in leaderstats!"
+	},
+	
+	["MakeInstance"] = {
+		["Execute"] = function (Player, InstanceType, Parent, Name, ...)
+			local valueToReturn
+			if not Player or not InstanceType or not Parent or not Name then
+				warn("Error (MakeInstance): Required arguments were missing or nil, aborting")
+			else
+				local newThing = Instance.new(InstanceType, Parent); newThing.Name = Name; valueToReturn = newThing
+			end
+			return valueToReturn
+		end,
 	}
 }
 
